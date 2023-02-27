@@ -1,6 +1,8 @@
 import React, { Fragment, useState, useEffect, useCallback } from "react";
 import ExchangeRatesList from "./components/ExchangeRatesList";
 import ConverterInput from "./components/ConverterInput";
+
+// import ErrorModal from '../UI/ErrorModal';
 import "./App.css";
 
 function App() {
@@ -15,11 +17,13 @@ function App() {
   const fetchRates = useCallback(async () => {
     setError(null);
     try {
-      const response = await fetch("https://cdn.cur.su/api/latest.json");
+      const response = await fetch("https://www.cbr-xml-daily.ru/latest.js");
       if (!response.ok) {
         throw new Error("Error. Something went wrong.");
       }
       const responseData = await response.json();
+      // console.log(responseData);
+      
       setRates(responseData.rates);
     } catch (error) {
       setError(error.message);
@@ -80,7 +84,7 @@ function App() {
         <ExchangeRatesList currenciesList={rates} />
       </header>
       <main>
-        <h2 className="main_title">Конвертер валют</h2>
+        <h2 className="main__title">Конвертер валют</h2>
         <ConverterInput
           currencies={Object.keys(rates)}
           amount={fromAmount}
@@ -94,7 +98,7 @@ function App() {
           currency={toCurrency}
           onAmountChange={toAmountChangeHandler}
           onCurrencyChange={toCurrencyChangeHandler}
-        />
+        />                 
       </main>
       ;
     </div>
@@ -102,7 +106,7 @@ function App() {
 
   if (error) {
     content = (
-      <section className="main_info-window">
+      <section className="main__info-window">
         <p>{error}</p>
       </section>
     );
@@ -110,10 +114,18 @@ function App() {
 
   if (isLoading) {
     content = (
-      <section className="main_info-window">
+      <section className="main__info-window">
         <p>Loading...</p>
       </section>
     );
+  }
+
+  if (+fromAmount < 0 || +toAmount < 0) {
+    setError({
+      title: 'Invalid number',
+      message: 'Please enter a valid number (> 0).',
+    });
+    return;
   }
 
   return <Fragment>{content}</Fragment>;

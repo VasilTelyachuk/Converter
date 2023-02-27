@@ -23,9 +23,9 @@ const ExchangeRatesList = (props) => {
 
   return (
     <Fragment>
-      <section className="header_conteiner">
-        <span className="header_info">Курс Валют :</span>
-        <ul className="header_list">
+      <section className="header__conteiner">
+        <span className="header__info">Курс Валют :</span>
+        <ul className="header__list">
           {primaryCurrencies.map((primaryCurrency) => (
             <ExchangeRateItem
               key={Math.random().toString()}

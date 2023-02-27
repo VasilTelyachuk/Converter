@@ -7,14 +7,14 @@ const ConverterInput = (props) => {
       <div className="converter-box">
         <label htmlFor="number of units to convert"></label>
         <input
-          className="converter-box_input"
+          className="converter-box__input"
           type="number"
           value={props.amount}
           onChange={(event) => props.onAmountChange(event.target.value)}
           placeholder="Кол-ство"
         ></input>
         <select
-          className="converter-box_select"
+          className="converter-box__select"
           name="currency"
           value={props.currency}
           onChange={(event) => props.onCurrencyChange(event.target.value)}

@@ -1,8 +1,8 @@
-.header_item {
+.header__item {
     display: flex;
     }
 
-.header_text {
+.header__text {
     font-size: 'Roboto', serif;
     font-size: 20px;
     font-weight: 400;

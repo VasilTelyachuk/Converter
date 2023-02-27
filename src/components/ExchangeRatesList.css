@@ -1,10 +1,10 @@
-.header_conteiner {
+.header__conteiner {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header_info {
+.header__info {
   display: flex;
   font-size: "Roboto", serif;
   font-size: 24px;
@@ -13,7 +13,7 @@
   margin-bottom: 5px;
 }
 
-.header_list {
+.header__list {
   display: flex;
   flex-direction: column;
   padding: 0;

@@ -12,14 +12,14 @@ main::before {
     margin: 0 auto;
 }
 
-.main_info-window {
+.main__info-window {
     font-size: 20px;
     text-align: center;
     color: azure;
     padding-top: 350px;
 }
 
-.main_title {
+.main__title {
     font-size: 32px;
     font-weight: 400;
     font-family: 'Roboto', serif;

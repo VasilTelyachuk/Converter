@@ -4,7 +4,7 @@
   margin-bottom: 20px;
 }
 
-.converter-box_input {
+.converter-box__input {
   margin-right: 10px;
   border-style: none;
   border-radius: 8px;
@@ -16,7 +16,7 @@
   font-size: 16px;
 }
 
-.converter-box_select {
+.converter-box__select {
   border-style: none;
   border-radius: 8px;
   text-align: center;

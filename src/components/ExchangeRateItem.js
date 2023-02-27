@@ -3,8 +3,8 @@ import "./ExchangeRateItem.css";
 
 const ExchangeRateItem = (props) => {
   return (
-    <li className="header_item">
-      <span className="header_text">{`${props.title} : ${props.value}`}</span>
+    <li className="header__item">
+      <span className="header__text">{`${props.title} : ${props.value}`}</span>
     </li>
   );
 };
