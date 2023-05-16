@@ -11,7 +11,7 @@ const ConverterInput = (props) => {
           type="number"
           value={props.amount}
           onChange={(event) => props.onAmountChange(event.target.value)}
-          placeholder="Кол-ство"
+          placeholder="Кіл-сть"
         ></input>
         <select
           className="converter-box__select"

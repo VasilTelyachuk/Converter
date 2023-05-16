@@ -107,7 +107,7 @@ function App() {
   if (error) {
     content = (
       <section className="main__info-window">
-        <p>{error}</p>
+        <p>{error.message}</p>
       </section>
     );
   }
@@ -120,13 +120,13 @@ function App() {
     );
   }
 
-  if (+fromAmount < 0 || +toAmount < 0) {
-    setError({
-      title: 'Invalid number',
-      message: 'Please enter a valid number (> 0).',
-    });
-    return;
-  }
+  // if (+fromAmount < 0 || +toAmount < 0) {
+  //   setError({
+  //     title: 'Invalid number',
+  //     message: 'Please enter a valid number (> 0).',
+  //   });
+  //   return;
+  // }
 
   return <Fragment>{content}</Fragment>;
 }
